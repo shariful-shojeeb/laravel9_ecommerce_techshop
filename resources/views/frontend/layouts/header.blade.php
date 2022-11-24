@@ -30,9 +30,13 @@
                             </ul>
                         </div>
                         <div class="top_bar_user">
-                            <div class="user_icon"><img src="{{URL::asset('public/frontend/')}}/images/user.svg" alt=""></div>
-                            <div><a href="{{route('user.signup')}}">Register</a></div>
-                            <div><a href="{{route('user.login')}}">Sign in</a></div>
+                           @if (session()->has('user_name'))
+                             <b>Welcome </b> {{session('user_name')}} | <a href="{{route('user.logout')}}">Logout</a>
+                           @else
+                           <div class="user_icon"><img src="{{URL::asset('public/frontend/')}}/images/user.svg" alt=""></div>
+                           <div><a href="{{route('user.signup')}}">Register</a></div>
+                           <div><a href="{{route('user.login')}}">Sign in</a></div>
+                           @endif
                         </div>
                     </div>
                 </div>
