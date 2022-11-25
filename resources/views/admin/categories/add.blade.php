@@ -34,19 +34,19 @@
                                 </ul>
                             </div>
                         @endif
-                        <form class="row g-3" method="POST" action="{{ URL::to('admin/category/store') }}">
+                        <form class="row g-3" method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="col-12">
                                 <label class="form-label">Category Name</label>
                                 <input type="text" name="category_name"
                                     class="form-control @error('category_name') is-invalid @enderror"
-                                    placeholder="Category Name">
+                                    placeholder="Category Name" value="{{old('category_name')}}" >
 
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Description</label>
                                 <textarea class="form-control @error('categroy_description') is-invalid @enderror" name="category_description"
-                                    placeholder="Full description" rows="4" cols="4"></textarea>
+                                    placeholder="Full description" rows="4" cols="4">{{old('categroy_description')}}</textarea>
 
                             </div>
                             @error('categroy_description')

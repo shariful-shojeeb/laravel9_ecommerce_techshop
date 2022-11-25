@@ -30,7 +30,7 @@
             </div>
         @endif
 
-         <form class="row g-3" method="POST" action="{{URL::to('admin/category/update').'/'.$data->id}}">
+         <form class="row g-3" method="POST" action="{{route('category.update',$data->id)}}" enctype="multipart/form-data">
             @csrf
            <div class="col-12">
              <label class="form-label">Category Name</label>
@@ -42,16 +42,28 @@
            </div>
            <div class="col-12">
              <label class="form-label">Images</label>
-             <input class="form-control" type="file">
+             <input class="form-control" name="category_image" type="file">
            </div>
 
            <div class="col-12">
-            <label class="form-label">Status</label>
-           <select name="category_status" class="form-control" id="">
-            <option value="">Select</option>
-            <option value="1" @if ($data->category_status=='1') {{ 'selected' }} @endif>Active</option>
-            <option value="2">Inactive</option>
-           </select>
+            <div class="row">
+                <div class="col-6">
+                    <label class="form-label">Status</label>
+                    <select name="category_status" class="form-control" id="">
+                     <option value="">Select</option>
+                     <option value="1" @if ($data->category_status=='1') {{ 'selected' }} @endif>Active</option>
+                     <option value="2" @if ($data->category_status=='2') {{ 'selected' }} @endif>Inactive</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label class="form-label">Popular Status</label>
+                    <select name="category_popular_status" class="form-control" id="">
+                     <option value="">Select</option>
+                     <option value="1" @if ($data->category_popular_status=='1') {{ 'selected' }} @endif>Active</option>
+                     <option value="2" @if ($data->category_popular_status=='2') {{ 'selected' }} @endif>Inactive</option>
+                    </select>
+                </div>
+            </div>
           </div>
            <div class="col-12">
              <input type="submit" class="btn btn-primary px-4" value="Update">

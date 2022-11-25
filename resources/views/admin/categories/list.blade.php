@@ -37,9 +37,8 @@
                 <tr>
                   <th>#ID</th>
                   <th class="text-center">Name</th>
-                  <th>Total Posts</th>
-                  <th>Description</th>
-                  <th>Sub Categories</th>
+                  <th>Total Products</th>
+                  <th>Status</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -50,16 +49,21 @@
                 <td>
                   <div class="d-flex align-items-center gap-3">
                     <div class="product-box border">
-                       <img src="{{URL::asset('public/admin')}}/assets/images/products/11.png" alt="">
+                       <img src="{{URL::asset('public/files/category/images'.'/'.$categories->category_image)}}" alt="">
                     </div>
                     <div class="product-info">
                       <h6 class="product-name mb-1">{{$categories->category_name}}</h6>
                     </div>
                   </div>
                 </td>
-                <td>Blank</td>
-                <td>$Sub Category array</td>
-                <td>{{$categories->category_description}}</td>
+                <td>0</td>
+                <td>
+                    @if ($categories->category_status=='1')
+                        <span class="badge bg-success">Active</span>
+                    @elseif ($categories->category_status=='2')
+                    <span class="badge bg-danger">Deactive</span>
+                    @endif
+                </td>
                 <td>
                   <div class="d-flex align-items-center gap-3 fs-6">
                     <a href="{{URL::to('admin/category/view').'/'.$categories->id}}" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
