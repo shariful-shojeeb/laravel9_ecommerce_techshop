@@ -21,7 +21,7 @@
         </li>
 
 
-        <li class="menu-label">News Controls</li>
+        <li class="menu-label">Controls</li>
 
 
         <li>
@@ -34,6 +34,20 @@
                 <li> <a href="{{ URL::route('category.add') }}"><i class="bi bi-circle"></i>Add category</a>
                 </li>
                 <li> <a href="{{ URL::route('category.list') }}"><i class="bi bi-circle"></i>Category List</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-collection"></i>
+                </div>
+                <div class="menu-title">Brands</div>
+            </a>
+            <ul>
+                <li> <a href="{{ URL::route('brand.add') }}"><i class="bi bi-circle"></i>Add brand</a>
+                </li>
+                <li> <a href="{{ URL::route('brand.list') }}"><i class="bi bi-circle"></i>All Brands</a>
                 </li>
             </ul>
         </li>

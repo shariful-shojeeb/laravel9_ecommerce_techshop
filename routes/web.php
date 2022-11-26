@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\UserController;
@@ -40,7 +41,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('attempt', [AdminController::class, 'loginChk'])->name('admin.login.attempt');
     Route::get('logout', [AdminController::class, 'logout'])->name('admin.logout');
 
-    //Admin Category Routes
+    //Category Routes
     Route::get('category/list', [CategoryController::class, 'index'])->name('category.list');
     Route::get('category/add', [CategoryController::class, 'create'])->name('category.add');
     Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
@@ -49,4 +50,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
     Route::get('category/changeStatus/{id}/{status}', [CategoryController::class, 'changeStatus'])->name('category.changeStatus');
+
+    //Brand Routes
+    Route::get('brand/view/{id}',[BrandController::class,'show'])->name('brand.view');
+    Route::get('brand/list',[BrandController::class,'index'])->name('brand.list');
+    Route::get('brand/add',[BrandController::class,'create'])->name('brand.add');
+    Route::post('brand/store',[BrandController::class,'store'])->name('brand.store');
+    Route::get('brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
+    Route::post('brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
+    Route::get('brand/delete/{id}',[BrandController::class,'destroy'])->name('brand.delete');
+    Route::get('brand/changeStatus/{id}/{status}', [BrandController::class, 'changeStatus'])->name('brand.changeStatus');
 });
