@@ -29,7 +29,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('user.loginChk') }}" id="contact_form">
+                        <form action="" id="contact_form">
                             @csrf
                             <label for="">Email Address</label>
                             <input type="email" class="form-control" name="user_email">

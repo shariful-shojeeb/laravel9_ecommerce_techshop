@@ -52,6 +52,21 @@
             </ul>
         </li>
 
+        <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bi bi-collection"></i>
+                </div>
+                <div class="menu-title">Product</div>
+            </a>
+            <ul>
+                <li> <a href="{{ URL::route('product.add') }}"><i class="bi bi-circle"></i>Add Product</a>
+                </li>
+                <li> <a href="{{ URL::route('product.list') }}"><i class="bi bi-circle"></i>All Products</a>
+                </li>
+            </ul>
+        </li>
+
+
 
 
 

@@ -34,6 +34,10 @@
     {{-- Data Tables --}}
     <link href="{{ URL::asset('public/admin/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}"
         rel="stylesheet" />
+    <link href="{{ URL::asset('public/admin/assets/plugins/select2/css/select2-bootstrap4.css') }}"
+        rel="stylesheet" />
+    <link href="{{ URL::asset('public/admin/assets/plugins/select2/css/select2.min.css') }}"
+        rel="stylesheet" />
 
 
     <title>Onedash - Bootstrap 5 Admin Template</title>
@@ -196,6 +200,8 @@
     <script src="{{ URL::asset('public/admin/assets/js/app.js') }}"></script>
     <script src="{{ URL::asset('public/admin/assets/js/index.js') }}"></script>
     <script src="{{ URL::asset('public/admin/assets/plugins/input-tags/js/tagsinput.js') }}"></script>
+    <script src="{{ URL::asset('public/admin/assets/plugins/select2/js/select2.min.js') }}"></script>
+    <script src="{{ URL::asset('public/admin/assets/js/form-select2.js') }}"></script>
 
 
 
@@ -204,6 +210,11 @@
         new PerfectScrollbar(".best-product")
     </script>
 
+<script>
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+</script>
     @yield('page_js')
 
 </body>
